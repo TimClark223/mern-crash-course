@@ -12,7 +12,7 @@ app.use(express.json()); //allows us to accept json data in req.data
 
 app.use("/api/products", productRoutes);
 
-router.listen(5000, () => {
+app.listen(5000, () => {
     connectDB();
     console.log("Console started at http://localhost:5000");
 });
