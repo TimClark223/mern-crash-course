@@ -1,15 +1,19 @@
 import { Box, Button, Container, Heading, useColorModeValue, Input, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useProductStore } from '../store/product';
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
     name: "",
     price: "",
-    image: "", // comma not given, check implication
+    image: "" // nothing happens even if comma is given here
   });
 
-  const handleAddProduct = () => {
-    console.log(newProduct);
+  const { createProduct } = useProductStore();
+  const handleAddProduct = async () => {
+    const { success, message } = await createProduct(newProduct);
+    console.log("Success: ", success);
+    console.log("Message: ", message);
   };
 
   return ( 
