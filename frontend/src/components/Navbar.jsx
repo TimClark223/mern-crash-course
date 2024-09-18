@@ -39,7 +39,7 @@ const Navbar = () => {
           </button>
         </Link>
         <Button onClick={toggleColorMode}>{ColorMode === "light" ?  <IoMoonSharp /> : <LuSun />
-        }</Button> //moon icon doesnt show
+        }</Button>
       </HStack>
     </Flex>  
   </Container>;
