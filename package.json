@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon backend/server.js"
+    "dev": "SET cross-env NODE_ENV=development&& nodemon backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "SET cross-env NODE_ENV=production&& node backend/server.js"
   },
   "type": "module",
   "keywords": [],
@@ -18,6 +20,7 @@
     "node.js": "^0.0.1-security"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.4"
   }
 }
